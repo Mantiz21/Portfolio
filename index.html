@@ -3,14 +3,15 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Luis G. Jiménez — SEO Copywriter Portfolio</title>
+<title>Luis G. Jiménez — SEO Analyst & Tech Journalist</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:wght@300;400;500&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
 <style>
   :root {
     --ink: #0f1117;
     --paper: #f5f0e8;
-    --accent: #c0392b;
+    --accent: #2563eb;
+    --accent-soft: #eaf1ff;
     --muted: #6b6560;
     --rule: #d8d0c4;
     --card: #ffffff;
@@ -175,6 +176,56 @@
   }
   .featured:hover .arrow { opacity: 1; transform: translate(3px, -3px); }
 
+  /* ── POSITIONING ── */
+  .pillars {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    border-top: 1px solid var(--rule);
+    border-left: 1px solid var(--rule);
+    margin-bottom: 8px;
+  }
+  .pillar {
+    background: var(--card);
+    border-right: 1px solid var(--rule);
+    border-bottom: 1px solid var(--rule);
+    padding: 24px;
+    min-height: 184px;
+  }
+  .pillar-index {
+    font-family: 'DM Mono', monospace;
+    color: var(--accent);
+    font-size: 10px;
+    letter-spacing: 0.08em;
+  }
+  .pillar h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.05rem;
+    line-height: 1.25;
+    margin: 12px 0 8px;
+  }
+  .pillar p {
+    color: var(--muted);
+    font-size: 12px;
+    line-height: 1.6;
+  }
+
+  /* ── AUTOMATION CARD ── */
+  .automation-card {
+    background: var(--accent-soft);
+    border: 1px solid #bfd2ff;
+    padding: 26px 28px;
+    position: relative;
+    color: var(--ink);
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+  .automation-card:hover { transform: translateY(-2px); box-shadow: 4px 4px 0 var(--accent); }
+  .automation-card a { position: absolute; inset: 0; }
+  .automation-card .f-tag { color: var(--accent); }
+  .automation-card .f-title { font-family: 'Playfair Display', serif; font-size: 1.25rem; line-height: 1.25; margin-bottom: 8px; }
+  .automation-card .f-desc { color: var(--muted); font-size: 13px; line-height: 1.6; max-width: 620px; }
+  .code-tags { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 16px; }
+  .code-tag { font-family: 'DM Mono', monospace; font-size: 9px; padding: 4px 7px; border: 1px solid #bfd2ff; background: #fff; color: #315cae; }
+
   /* ── ARTICLE GRID ── */
   .article-grid {
     display: grid;
@@ -281,7 +332,7 @@
     .masthead, .about-strip, .main, footer { padding-left: 24px; padding-right: 24px; }
     .masthead-inner { grid-template-columns: 1fr; }
     .contact-block { text-align: left; border-left: none; padding-left: 0; border-top: 1px solid rgba(255,255,255,0.2); padding-top: 16px; }
-    .article-grid, .client-grid { grid-template-columns: 1fr; }
+    .article-grid, .client-grid, .pillars { grid-template-columns: 1fr; }
   }
 
   /* load animation */
@@ -301,9 +352,9 @@
 <header class="masthead">
   <div class="masthead-inner">
     <div>
-      <p class="kicker">Writing Portfolio</p>
+      <p class="kicker">The Tech Journalist · Portfolio</p>
       <h1 class="name">Luis G. Jiménez</h1>
-      <p class="tagline">SEO Copywriter &nbsp;·&nbsp; Content Specialist &nbsp;·&nbsp; Journalist &nbsp;·&nbsp; Bogotá, Colombia</p>
+      <p class="tagline">Journalist &nbsp;·&nbsp; SEO Analyst &nbsp;·&nbsp; Content Automation &nbsp;·&nbsp; Bogotá, Colombia</p>
     </div>
     <div class="contact-block">
       <a href="mailto:JimenezN.Luis@gmail.com">JimenezN.Luis@gmail.com</a><br>
@@ -316,14 +367,42 @@
 
 <!-- ABOUT -->
 <div class="about-strip">
-  <p>"Journalist turned SEO copywriter. I write blog content and marketing copy from scratch — adapting to each brand's voice across industries like industrial B2B, real estate, travel, and security. I don't just fill word counts; I make content that ranks and reads."</p>
+  <p>"I bring editorial rigor to content systems: research and writing that earn attention, SEO strategy that earns visibility, and automation that makes both scale."</p>
 </div>
 
 <!-- MAIN -->
 <main class="main">
 
+  <!-- POSITIONING -->
+  <div class="section-label"><h2>How I work</h2></div>
+  <div class="pillars">
+    <article class="pillar">
+      <span class="pillar-index">01 / EDITORIAL</span>
+      <h3>Reporting &amp; research</h3>
+      <p>Clear, well-sourced stories and brand content built from research—not filler.</p>
+    </article>
+    <article class="pillar">
+      <span class="pillar-index">02 / SEARCH</span>
+      <h3>SEO strategy</h3>
+      <p>Content architecture, search intent and on-page decisions that turn useful writing into discoverable writing.</p>
+    </article>
+    <article class="pillar">
+      <span class="pillar-index">03 / SYSTEMS</span>
+      <h3>Automation with AI</h3>
+      <p>Practical workflows for research, quality control and content operations—designed to preserve editorial judgment.</p>
+    </article>
+  </div>
+
   <!-- FEATURED -->
-  <div class="section-label"><h2>Featured Work</h2></div>
+  <div class="section-label"><h2>Featured editorial work</h2></div>
+
+  <div class="featured">
+    <a href="https://tottoxelmundo.com/autor?slug=luis-jimenez" target="_blank" rel="noopener noreferrer" aria-label="View Luis Jiménez's author archive at Totto"></a>
+    <p class="f-tag">Editorial writing · Totto x El Mundo</p>
+    <h3 class="f-title">Author archive — Totto x El Mundo</h3>
+    <p class="f-desc">A selection of published pieces for Totto's editorial platform, combining brand voice, practical storytelling and audience-first content.</p>
+    <span class="arrow">↗</span>
+  </div>
 
   <div class="featured">
     <a href="https://plazacapital.co/blog/luis-guillermo-jimenez-nino" target="_blank" rel="noopener"></a>
@@ -333,8 +412,23 @@
     <span class="arrow">↗</span>
   </div>
 
+  <!-- AUTOMATION -->
+  <div class="section-label"><h2>Automation &amp; technical practice</h2></div>
+  <div class="automation-card">
+    <a href="https://github.com/Mantiz21" target="_blank" rel="noopener noreferrer" aria-label="Visit Luis Jiménez's GitHub profile"></a>
+    <p class="f-tag">Open source · workflows &amp; experiments</p>
+    <h3 class="f-title">Content systems, not content at scale for its own sake.</h3>
+    <p class="f-desc">Exploring automated workflows for SEO research, content operations and AI-assisted quality checks. The goal is a more thoughtful process—not a noisier one.</p>
+    <div class="code-tags">
+      <span class="code-tag">SEO</span>
+      <span class="code-tag">AI workflows</span>
+      <span class="code-tag">research ops</span>
+      <span class="code-tag">GitHub ↗</span>
+    </div>
+  </div>
+
   <!-- SELECTED ARTICLES -->
-  <div class="section-label"><h2>Selected Articles by Niche</h2></div>
+  <div class="section-label"><h2>Selected SEO &amp; content work</h2></div>
   <div class="article-grid">
 
     <div class="article-card">
@@ -445,6 +539,12 @@
       <p class="client-niche">Journalism · Opinion · Unirosario</p>
     </div>
 
+    <div class="client-card">
+      <a href="https://tottoxelmundo.com/autor?slug=luis-jimenez" target="_blank" rel="noopener noreferrer"></a>
+      <p class="client-name">Totto x El Mundo</p>
+      <p class="client-niche">Editorial content · Author archive</p>
+    </div>
+
   </div>
 
   <!-- SKILLS -->
@@ -461,6 +561,8 @@
     <span class="skill-pill">WordPress</span>
     <span class="skill-pill">Google Search Console</span>
     <span class="skill-pill">Google Analytics</span>
+    <span class="skill-pill">Content Automation</span>
+    <span class="skill-pill">AI-assisted Research</span>
     <span class="skill-pill">Spanish (Native)</span>
     <span class="skill-pill">English (Professional)</span>
   </div>
