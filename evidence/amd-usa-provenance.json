@@ -1,0 +1,27 @@
+{
+  "web": {
+    "source": "https___agenciadigitalamd.com_-Performance-on-Search-2026-09-02/Páginas.csv",
+    "source_sha256": "b0fc74c63188240dd4a3c9feb421bd039d487c678a1ae8aaeddf917af10f2d10",
+    "export_date": "2026-09-02",
+    "period_start": "2026-05-31",
+    "period_end": "2026-08-30",
+    "row": {
+      "Páginas principales": "https://agenciadigitalamd.com/marketing-digital/agencias-de-marketing-digital-estados-unidos/",
+      "Clics": "42",
+      "Impresiones": "18897",
+      "CTR": "0.22%",
+      "Posición": "38.96"
+    }
+  },
+  "ai": {
+    "source": "https___agenciadigitalamd.com_-Performance-on-Search-Generative-AI-Features-2026-09-02/Páginas.csv",
+    "source_sha256": "3e674c256cc72ce61e7aa76744c046d1d7047562e7b3240ee661d1a864715783",
+    "export_date": "2026-09-02",
+    "period_start": "2026-05-31",
+    "period_end": "2026-08-30",
+    "row": {
+      "Páginas principales": "https://agenciadigitalamd.com/marketing-digital/agencias-de-marketing-digital-estados-unidos/",
+      "Impresiones": "1420"
+    }
+  }
+}

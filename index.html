@@ -383,6 +383,30 @@
       line-height: 1.65;
     }
 
+    #results { scroll-margin-top: 80px; }
+
+    .evidence-card {
+      border: 1px solid var(--rule);
+      background: var(--surface);
+      padding: clamp(24px, 4vw, 42px);
+    }
+    .evidence-card h3 {
+      margin: 12px 0;
+      font-family: "Playfair Display", serif;
+      font-size: clamp(1.5rem, 3vw, 2rem);
+      line-height: 1.2;
+    }
+    .evidence-card p { max-width: 780px; color: var(--muted); font-size: 14px; }
+    .evidence-metrics { display: flex; flex-wrap: wrap; gap: 28px 48px; margin: 26px 0; }
+    .evidence-metrics div { flex: 1 1 180px; }
+    .evidence-metrics dt { color: var(--muted); font-size: 12px; }
+    .evidence-metrics dd { font-family: "DM Mono", monospace; font-size: clamp(1.8rem, 4vw, 2.5rem); }
+    .evidence-links { display: flex; flex-wrap: wrap; gap: 12px 24px; margin-top: 20px; font-size: 13px; }
+    .evidence-links a { text-underline-offset: 4px; }
+    .evidence-card details { margin-top: 22px; border-top: 1px solid var(--rule); padding-top: 16px; }
+    .evidence-card summary { cursor: pointer; font-size: 13px; }
+    .evidence-card details p { margin-top: 12px; font-size: 12px; }
+
     .featured-grid {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
@@ -813,6 +837,7 @@
       <div>
         <p class="hero-summary" data-i18n="heroSummary">I connect editorial craft, SEO strategy and practical automation to create content that earns attention—and keeps earning it.</p>
         <div class="hero-actions">
+          <a class="button secondary" href="#results"><span data-i18n="resultsButton">View results &amp; evidence</span><span aria-hidden="true">↓</span></a>
           <button class="button contact-trigger" type="button">
             <span data-i18n="contactButton">Let’s talk</span>
             <span aria-hidden="true">↗</span>
@@ -834,6 +859,34 @@
   </aside>
 
   <main class="site-shell">
+    <section class="section" id="results" aria-labelledby="results-heading">
+      <div class="section-heading">
+        <h2 id="results-heading" data-i18n="resultsHeading">SEO results &amp; evidence</h2>
+        <span class="section-number">AMD / SEO</span>
+      </div>
+      <article class="evidence-card">
+        <span class="card-tag" data-i18n="resultsTag">Agency blog · Recorded visibility</span>
+        <h3 data-i18n="resultsTitle">AMD: content visible in search and AI features</h3>
+        <p data-i18n="resultsRole">At AMD, I work on SEO content research, writing and on-page optimization. This example from the agency’s blog shows recorded visibility for the article about marketing agencies in the United States.</p>
+        <dl class="evidence-metrics">
+          <div><dt data-i18n="webImpressions">Web search impressions</dt><dd data-i18n="metricWebImpressions">18,897</dd></div>
+          <div><dt data-i18n="webClicks">Web search clicks</dt><dd>42</dd></div>
+          <div><dt data-i18n="aiImpressions">AI-feature impressions (export)</dt><dd data-i18n="metricAiImpressions">1,420</dd></div>
+        </dl>
+        <p data-i18n="resultsPeriod">May 31–August 30, 2026 · Exports dated September 2, 2026.</p>
+        <div class="evidence-links">
+          <a href="https://agenciadigitalamd.com/marketing-digital/agencias-de-marketing-digital-estados-unidos/" target="_blank" rel="noopener noreferrer" data-i18n="resultsArticle">Read the published article ↗</a>
+          <a href="evidence/amd-usa-web.csv" download data-i18n="resultsWebSource">Download web evidence (CSV)</a>
+          <a href="evidence/amd-usa-ai.csv" download data-i18n="resultsAiSource">Download AI evidence (CSV)</a>
+        </div>
+        <details>
+          <summary data-i18n="resultsMethod">Source and measurement scope</summary>
+          <p data-i18n="resultsScope">Source: supplied Google Search Console exports, “Performance on Search” and “Performance on Search — Generative AI Features”. Downloads preserve the original row for this URL. The period comes from the daily series in each export; filters specify Web and the last three months. These are page-level observations within the agency’s team work. They do not establish growth, individual attribution or a current ranking. The two impression counts are reported separately and should not be added.</p>
+          <div class="evidence-links"><a href="evidence/amd-usa-provenance.json" data-i18n="resultsProvenance">View export provenance (JSON)</a></div>
+        </details>
+      </article>
+    </section>
+
     <section class="section" aria-labelledby="approach-heading">
       <div class="section-heading">
         <h2 id="approach-heading" data-i18n="approachHeading">How I work</h2>
@@ -1090,6 +1143,24 @@
   <script>
     const translations = {
       es: {
+        metricWebImpressions: "18.897",
+        metricAiImpressions: "1.420",
+        resultsButton: "Ver resultados y evidencia",
+        resultsHeading: "Resultados SEO y evidencia",
+        resultsTag: "Blog de agencia · Visibilidad registrada",
+        resultsTitle: "AMD: contenido visible en búsquedas y funciones de IA",
+        resultsRole: "En AMD trabajo en investigación, redacción SEO y optimización on-page. Este ejemplo del blog de la agencia muestra la visibilidad registrada del artículo sobre agencias de marketing en Estados Unidos.",
+        webImpressions: "Impresiones en búsqueda web",
+        webClicks: "Clics en búsqueda web",
+        aiImpressions: "Impresiones en funciones de IA (exportación)",
+        resultsPeriod: "31 de mayo–30 de agosto de 2026 · Exportaciones del 2 de septiembre de 2026.",
+        resultsArticle: "Leer el artículo publicado ↗",
+        resultsWebSource: "Descargar evidencia web (CSV)",
+        resultsAiSource: "Descargar evidencia de IA (CSV)",
+        resultsMethod: "Fuente y alcance de la medición",
+        resultsScope: "Fuente: exportaciones proporcionadas de Google Search Console, «Performance on Search» y «Performance on Search — Generative AI Features». Las descargas conservan la fila original de esta URL. El período procede de la serie diaria de cada exportación; los filtros indican Web y últimos tres meses. Son resultados observados de la página dentro del trabajo del equipo de la agencia. No demuestran crecimiento, atribución individual ni una posición actual. Las impresiones de ambos informes se presentan por separado y no deben sumarse.",
+        resultsProvenance: "Ver procedencia de las exportaciones (JSON)",
+
         pageTitle: "Luis G. Jiménez — Analista SEO y periodista tecnológico",
         pageDescription: "Portafolio de Luis G. Jiménez — periodista, analista SEO y especialista en automatización de contenidos.",
         heroEyebrow: "Periodismo · Posicionamiento · Sistemas",
@@ -1146,6 +1217,24 @@
         languageAria: "Change language to English"
       },
       en: {
+        metricWebImpressions: "18,897",
+        metricAiImpressions: "1,420",
+        resultsButton: "View results & evidence",
+        resultsHeading: "SEO results & evidence",
+        resultsTag: "Agency blog · Recorded visibility",
+        resultsTitle: "AMD: content visible in search and AI features",
+        resultsRole: "At AMD, I work on SEO content research, writing and on-page optimization. This example from the agency’s blog shows recorded visibility for the article about marketing agencies in the United States.",
+        webImpressions: "Web search impressions",
+        webClicks: "Web search clicks",
+        aiImpressions: "AI-feature impressions (export)",
+        resultsPeriod: "May 31–August 30, 2026 · Exports dated September 2, 2026.",
+        resultsArticle: "Read the published article ↗",
+        resultsWebSource: "Download web evidence (CSV)",
+        resultsAiSource: "Download AI evidence (CSV)",
+        resultsMethod: "Source and measurement scope",
+        resultsScope: "Source: supplied Google Search Console exports, “Performance on Search” and “Performance on Search — Generative AI Features”. Downloads preserve the original row for this URL. The period comes from the daily series in each export; filters specify Web and the last three months. These are page-level observations within the agency’s team work. They do not establish growth, individual attribution or a current ranking. The two impression counts are reported separately and should not be added.",
+        resultsProvenance: "View export provenance (JSON)",
+
         pageTitle: "Luis G. Jiménez — SEO Analyst & Tech Journalist",
         pageDescription: "Portfolio of Luis G. Jiménez — journalist, SEO analyst and content automation specialist.",
         heroEyebrow: "Journalism · Search · Systems",
